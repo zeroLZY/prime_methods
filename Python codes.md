@@ -38,12 +38,13 @@ def append_prime_list(n):
 	elif n == 3: return prime_list
 	else:
 		for number in range(4,n+1):
-			for prime_number in prime_list:
-				if number%prime_number == 0:
-					break
-
+			#for prime_number in prime_list:
+			#	if number%prime_number == 0:
+			#		break
+			if all(number%prime_number for prime_number in prime_list):
+				prime_list.append(number)
 	return prime_list
-print 'method   two:','sorry, I didn\'t get right ans'
+print 'method   two:',append_prime_list(nmax)
 
 #Sieve of Eratosthenes method
 def Sieve_prime(n):
